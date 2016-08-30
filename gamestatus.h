@@ -4,6 +4,8 @@
 
 int checkGameover(asteroid* Asteroids, spaceship aSpaceship, int numAsteroids);
 
+void gameoverScreen(int score, int* key);
+
 void gameinit();
 
 void create_menu(WINDOW *menu_win, char** choices, int highlight, int n_choices);

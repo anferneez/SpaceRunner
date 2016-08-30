@@ -1,7 +1,7 @@
 #include "defaultlib.h"
 #include "gamestatus.h"
 
-#define DELAY 50000
+#define DELAY 35000
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 		mvprintw(3, maxx-10, "%d", score++);
 		attroff(COLOR_PAIR(4));
 
-		refresh();
+		wrefresh(stdscr);
 		usleep(DELAY);
 		
 		gameover=checkGameover(Asteroids, aSpaceship, numAsteroids);
@@ -43,7 +43,7 @@ int main()
 
 	while (ch != KEY_F(1))
 	{
-		ch = getch();
+		gameoverScreen(score, &ch);
 	}
 
 	endwin();
